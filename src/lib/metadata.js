@@ -1,4 +1,4 @@
-import {resolve} from 'path';
+import build from "../../build.js"
 
 const metadata = {
     name: 'Host8787',
@@ -7,13 +7,7 @@ const metadata = {
     path2: '/Host8787/',
     license: 'MIT',
     licenseYear: 2026,
-    build: {
-        rollupOptions: {
-            input: {
-                main: resolve(__dirname, 'index.html'),
-            }
-        }
-    }
+    build
 }
 
 export default metadata
