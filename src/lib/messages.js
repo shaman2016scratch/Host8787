@@ -4,6 +4,6 @@ let messages = {
     'footer.license': `(C) ${metadata.licenseYear}, ${metadata.name} - новый сервис для запуска кода!`
 }
 
-let warn = {}
+let warns = {}
 
 export { messages, warns }
