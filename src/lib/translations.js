@@ -7,25 +7,32 @@ let translations = {
     warns: {
         en: {}
     },
-    config: {}
+    config: {
+        default: 'ru'
+    }
 }
 
 function translate(id, type) {
-    let lang = 'ru'
-    if (translations.config.default === lang) {
-        lang = 'default'
-    }
+    let lang = localStorage.getItem('Host8787-language')
     if (type === 'message') {
-        if (!translations.messages[lang][id]) {
-            return message[id]
+        if (lang !== translations.config.default) {
+            if (!translations.messages[lang][id]) {
+                return messages[id]
+            } else {
+                return translations.messages[lang][id]
+            }
         } else {
-            return translations.messages[lang][id]
+            return messages[id]
         }
     } else if (type === 'warn') {
-        if (!translations.warns[lang][id]) {
-            return warn[id]
+        if (lang !== translations.config.default) {
+            if (!translations.messages[lang][id]) {
+                return messages[id]
+            } else {
+                return translations.messages[lang][id]
+            }
         } else {
-            return translations.warns[lang][id]
+            return messages[id]
         }
     }
 }
